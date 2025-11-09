@@ -59,7 +59,7 @@ export default function Hero({ onStudentClick, onTeacherClick }: HeroProps) {
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Explore
+            Student Explore
           </motion.button>
           <motion.button
             onClick={onTeacherClick}
@@ -68,7 +68,7 @@ export default function Hero({ onStudentClick, onTeacherClick }: HeroProps) {
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            Get started
+            Teacher Explore
           </motion.button>
         </motion.div>
       </div>

@@ -10,6 +10,8 @@ import LoginPage from './components/LoginPage';
 import LoginTeacherPage from './pages/LoginTeacherPage';
 import LoginStudentPage from './pages/LoginStudentPage';
 import SignupPage from './components/SignupPage';
+import StudentExplore from './pages/StudentExplore';
+import TeacherExplore from './pages/TeacherExplore';
 import HelpCenter from './pages/support/HelpCenter';
 import Contact from './pages/support/Contact';
 import FAQ from './pages/support/FAQ';
@@ -18,7 +20,7 @@ import Privacy from './pages/legal/Privacy';
 import Terms from './pages/legal/Terms';
 import Security from './pages/legal/Security';
 
-type PageType = 'home' | 'login' | 'login-teacher' | 'login-student' | 'signup' | 'help' | 'contact' | 'faq' | 'community' | 'privacy' | 'terms' | 'security';
+type PageType = 'home' | 'login' | 'login-teacher' | 'login-student' | 'signup' | 'student-explore' | 'teacher-explore' | 'help' | 'contact' | 'faq' | 'community' | 'privacy' | 'terms' | 'security';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -55,6 +57,14 @@ function App() {
 
   if (currentPage === 'signup') {
     return <SignupPage onBack={() => navigateToPage('home')} onLogin={() => navigateToPage('login')} />;
+  }
+
+  if (currentPage === 'student-explore') {
+    return <StudentExplore onBack={() => navigateToPage('home')} onGetStarted={() => navigateToPage('signup')} />;
+  }
+
+  if (currentPage === 'teacher-explore') {
+    return <TeacherExplore onBack={() => navigateToPage('home')} onGetStarted={() => navigateToPage('signup')} />;
   }
 
   if (currentPage === 'help') {
@@ -130,7 +140,7 @@ function App() {
   return (
     <div className="bg-dark-primary">
       <Navbar onLoginClick={() => navigateToPage('login')} onSignupClick={() => navigateToPage('signup')} onLogoClick={() => navigateToPage('home')} />
-      <Hero onStudentClick={() => navigateToPage('signup')} onTeacherClick={() => navigateToPage('signup')} />
+      <Hero onStudentClick={() => navigateToPage('student-explore')} onTeacherClick={() => navigateToPage('teacher-explore')} />
       <About />
       <Services />
       <Resources />
