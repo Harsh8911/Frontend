@@ -19,8 +19,9 @@ import Community from './pages/support/Community';
 import Privacy from './pages/legal/Privacy';
 import Terms from './pages/legal/Terms';
 import Security from './pages/legal/Security';
+import StudentDashboard from './components/StudentDashboard';
 
-type PageType = 'home' | 'login' | 'login-teacher' | 'login-student' | 'signup' | 'student-explore' | 'teacher-explore' | 'help' | 'contact' | 'faq' | 'community' | 'privacy' | 'terms' | 'security';
+type PageType = 'home' | 'login' | 'login-teacher' | 'login-student' | 'signup' | 'student-explore' | 'teacher-explore' | 'help' | 'contact' | 'faq' | 'community' | 'privacy' | 'terms' | 'security' | 'student-dashboard';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -135,6 +136,10 @@ function App() {
         <Footer onNavigate={(page) => navigateToPage(page as PageType)} />
       </div>
     );
+  }
+
+  if (currentPage === 'student-dashboard') {
+    return <StudentDashboard onLogout={() => navigateToPage('home')} />;
   }
 
   return (
