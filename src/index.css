@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-primary: #0a0a0f;
+  --color-dark-secondary: #13131a;
+  --color-dark-tertiary: #1a1a24;
+  --color-accent: #00d4aa;
+  --color-accent-light: #00f5d4;
+  --color-accent-dark: #00a886;
+}
+
+@layer components {
+  .bg-dark-primary { @apply bg-[#0a0a0f]; }
+  .bg-dark-secondary { @apply bg-[#13131a]; }
+  .bg-dark-tertiary { @apply bg-[#1a1a24]; }
+  .text-accent { @apply text-[#00d4aa]; }
+  .border-accent { @apply border-[#00d4aa]; }
+  .from-accent { @apply from-[#00d4aa]; }
+  .to-accent-light { @apply to-[#00f5d4]; }
+}
+
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-[#0a0a0f] text-white overflow-x-hidden;
+}
+
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#13131a];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#00d4aa];
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}

@@ -1,0 +1,29 @@
+{
+  "colleges": [
+    "IIT Bombay",
+    "IIT Delhi",
+    "IIT Madras",
+    "IIT Kanpur",
+    "IIT Kharagpur",
+    "IIT Roorkee",
+    "NIT Trichy",
+    "NIT Surathkal",
+    "IIIT Hyderabad",
+    "BITS Pilani",
+    "VIT Vellore",
+    "University of Delhi",
+    "Jawaharlal Nehru University (JNU)",
+    "Banaras Hindu University (BHU)",
+    "Christ University, Bangalore",
+    "Other (not listed)"
+  ],
+  "schools": [
+    "Delhi Public School",
+    "Kendriya Vidyalaya",
+    "The Doon School",
+    "St. Xavier's High School",
+    "La Martiniere",
+    "Modern School",
+    "Other (not listed)"
+  ]
+}
