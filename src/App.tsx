@@ -140,7 +140,11 @@ function App() {
   return (
     <div className="bg-dark-primary">
       <Navbar onLoginClick={() => navigateToPage('login')} onSignupClick={() => navigateToPage('signup')} onLogoClick={() => navigateToPage('home')} />
-      <Hero onStudentClick={() => navigateToPage('student-explore')} onTeacherClick={() => navigateToPage('teacher-explore')} />
+      <Hero
+        onExploreStudent={() => navigateToPage('student-explore')}
+        onExploreTeacher={() => navigateToPage('teacher-explore')}
+        onGetStarted={() => navigateToPage('signup')}
+      />
       <About />
       <Services />
       <Resources />
