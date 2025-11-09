@@ -111,35 +111,6 @@ export default function DashboardLayout({ children, currentPage, onNavigate, onL
         </div>
       </motion.nav>
 
-      {/* Sidebar Navigation - Desktop */}
-      <aside className="hidden lg:flex fixed left-0 top-16 bottom-0 w-64 bg-dark-secondary border-r border-gray-800 flex-col">
-        <nav className="flex-1 px-4 py-6 space-y-2">
-          {menuItems.map((item, index) => {
-            const Icon = item.icon;
-            const isActive = currentPage === item.id;
-            return (
-              <motion.button
-                key={item.id}
-                onClick={() => handleNavigate(item.id as any)}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                  isActive
-                    ? 'bg-gradient-to-r from-accent/20 to-accent-light/20 text-accent border border-accent/30'
-                    : 'text-gray-400 hover:bg-dark-tertiary hover:text-white'
-                }`}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, x: 5 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Icon className="w-5 h-5" />
-                <span className="font-medium">{item.label}</span>
-              </motion.button>
-            );
-          })}
-        </nav>
-      </aside>
-
       {/* Mobile Sidebar */}
       <AnimatePresence>
         {isSidebarOpen && (
