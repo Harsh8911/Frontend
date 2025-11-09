@@ -20,7 +20,7 @@ import Privacy from './pages/legal/Privacy';
 import Terms from './pages/legal/Terms';
 import Security from './pages/legal/Security';
 import TeacherDashboard from './pages/TeacherDashboard';
-import StudentDashboard from './pages/StudentDashboard';
+import StudentDashboard from './components/StudentDashboard';
 
 type PageType = 'home' | 'login' | 'login-teacher' | 'login-student' | 'signup' | 'student-explore' | 'teacher-explore' | 'help' | 'contact' | 'faq' | 'community' | 'privacy' | 'terms' | 'security' | 'teacher-dashboard' | 'student-dashboard';
 
@@ -144,7 +144,7 @@ function App() {
   }
 
   if (currentPage === 'student-dashboard') {
-    return <StudentDashboard onBack={() => navigateToPage('home')} />;
+    return <StudentDashboard onLogout={() => navigateToPage('home')} />;
   }
 
   return (
